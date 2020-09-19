@@ -29,7 +29,7 @@ docker network create ArcaNetwork
 #Creating containers 
 
 docker run -d --name ContainerA  -p 5601:5601 kibana:6.4.2
-docker run --name ContainerC --net ArcaNetwork -e MYSQL_ROOT_PASSWORD=ArcaPayment -d mysql:latest
+docker run --name ContainerC --net ArcaNetwork  -p 3306:3306 -e MYSQL_ROOT_PASSWORD=ArcaPayment -d mysql:latest
 docker run -it --rm -d -p 8080:80 --name ContainerB nginx --net ArcaNetwork
 
 
